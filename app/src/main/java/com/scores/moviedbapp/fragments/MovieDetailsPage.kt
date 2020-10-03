@@ -21,7 +21,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.lang.StringBuilder
 
-class MovieDetailsPage : Fragment(), View.OnClickListener, IonRequestCompleted {
+class MovieDetailsPage : Fragment(), View.OnClickListener {
 
     private lateinit var yearTv: TextView
     private lateinit var screenshotIv: ImageView
@@ -128,12 +128,5 @@ class MovieDetailsPage : Fragment(), View.OnClickListener, IonRequestCompleted {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-    }
-
-    override fun navigateToMainActivity() {}
-
-    override fun parseJsonString(jsonStr: String) {
-        val data = NetworkMgr.getGson().fromJson(jsonStr, MoviesListResponseObject::class.java)
-        Utils.setMovieList(data.results.toCollection(ArrayList()))
     }
 }
