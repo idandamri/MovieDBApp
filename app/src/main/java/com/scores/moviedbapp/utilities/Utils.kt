@@ -104,6 +104,19 @@ class Utils {
             }
             return ret
         }
-    }
 
+        fun getMovieListAccordingToType(isLikePage: Boolean): ArrayList<Movie> {
+            var ret = ArrayList<Movie>()
+            try {
+                ret = if (isLikePage) {
+                    getLikedMoviesList()!!
+                } else {
+                    getMoviesList()!!
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+            return ret
+        }
+    }
 }

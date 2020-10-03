@@ -73,12 +73,12 @@ class MovieListPage : BaseListFragment() , OnRecyclerViewItemClickListenerScreen
 
     override fun onResume() {
         super.onResume()
-        if (arguments?.getBoolean(IS_LIKED_PAGE, false)!!) {
-            (recyclerView.adapter as ListPageAdapter).setShowLikeToggleButton(false)
-        } else {
-            (recyclerView.adapter as ListPageAdapter).setShowLikeToggleButton(true)
+        try {
+            (recyclerView.adapter as ListPageAdapter)
+                .setToggleButtonAccordingToPageType(arguments?.getBoolean(IS_LIKED_PAGE, false)!!)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
-
     }
 
     override fun handleAdapterWithData() {
@@ -87,11 +87,7 @@ class MovieListPage : BaseListFragment() , OnRecyclerViewItemClickListenerScreen
                 recyclerView.adapter = viewAdapter
             }
             val adapter = viewAdapter as ListPageAdapter
-            if (arguments?.getBoolean(IS_LIKED_PAGE, false)!!) {
-                adapter.setListItems(Utils.getLikedMoviesList()!!)
-            } else {
-                adapter.setListItems(Utils.getMoviesList()!!)
-            }
+            adapter.setListItems(Utils.getMovieListAccordingToType(arguments?.getBoolean(IS_LIKED_PAGE, false)!!))
             recyclerView.adapter?.notifyDataSetChanged()
             hideLoader()
         } catch (e: Exception) {

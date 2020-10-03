@@ -120,4 +120,16 @@ class ListPageAdapter (private var onRecyclerViewItemClickListenerScreen : OnRec
     fun setShowLikeToggleButton(value: Boolean) {
         showLikeToggleBtn = value
     }
+
+    fun setToggleButtonAccordingToPageType(isLikePage: Boolean) {
+        try {
+            if (isLikePage) {
+                setShowLikeToggleButton(false)
+            } else {
+                setShowLikeToggleButton(true)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
 }
