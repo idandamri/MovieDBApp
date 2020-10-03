@@ -1,0 +1,9 @@
+<resources>
+<string name="app_name">Movie DB app</string>
+<string name="rating_is">Rating is: </string>
+<string name="released_on">Released on:</string>
+<string name="genre_is">Genre is:</string>
+<string name="genre_are">Genres are:</string>
+<string name="add_movie">Add movie</string>
+<string name="movie_in_db">Current movie already exist in the Database</string>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_margin"
+    android:background="@drawable/card_bg">
+
+    <ImageView
+        android:id="@+id/movie_item_iv"
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:layout_margin="@dimen/item_image_padding"
+        android:layout_marginBottom="@dimen/item_margin"
+        android:scaleType="center"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/movie_item_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/item_text_margin"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:gravity="top|start"
+        android:maxLines="3"
+        android:paddingStart="5dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="3dp"
+        android:textColor="@color/mainTextColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/movie_item_like_button"
+        app:layout_constraintBottom_toTopOf="@+id/movie_item_release_date_tv"
+        app:layout_constraintStart_toEndOf="@+id/movie_item_iv"
+        app:layout_constraintTop_toTopOf="@+id/movie_item_iv" />
+
+    <TextView
+        android:id="@+id/movie_item_release_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_text_margin"
+        android:background="@drawable/round_yellow_bg"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/movie_item_like_button_selected"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:visibility="invisible"
+        android:background="@drawable/round_yellow_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/movie_item_like_button"
+        app:layout_constraintStart_toStartOf="@+id/movie_item_like_button"
+        app:layout_constraintEnd_toEndOf="@+id/movie_item_like_button"
+        app:layout_constraintTop_toTopOf="@+id/movie_item_like_button"/>
+
+    <ImageView
+        android:id="@+id/movie_item_like_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_stars_liked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
