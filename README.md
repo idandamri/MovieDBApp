@@ -1,7 +1,7 @@
 # MovieDBApp
 
 
-○ what architecture have you used and why?
+* what architecture have you used and why?
 
   ○ I used a type of MVP, for the simple app idea using managers as Presentor to get data from url and save db of favorites and updating the View (fragments/items in recyclerview) and Movie objects as Model.
   
